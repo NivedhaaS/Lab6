@@ -1,6 +1,6 @@
 def main():
     while True:
-        print('Menu')
+        print('\nMenu')
         print('------------')
         print('1. Encode')
         print('2. Decode')
@@ -12,15 +12,22 @@ def main():
             encoded_password = encode(password)
             print('Your password has been encoded and stored!')
         if option == 2:
-            print('The encoded password is ',encoded_password,', and the original password is ',password,'.')
+            print(f'The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.')
         if option == 3:
             break
 
 def encode(password):
     encoded_password = ''
-    for i in range(0, len(password)):
+    for i in password:
         encoded_password += str(int(i)+3)
     return encoded_password
+
+def decode(encoded_password):
+    decoded_password = ""
+    for i in encoded_password:
+        decoded_password += str(int(i)-3)
+    return decoded_password
+
 
 if __name__ == "__main__":
     main()
