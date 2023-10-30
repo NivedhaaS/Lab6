@@ -26,6 +26,7 @@ def decode(encoded_password):
     decoded_password = ""
     for i in encoded_password:
         decoded_password += str(int(i)-3)
+
     return decoded_password
 
 
